@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Roller</title>
+    <style>
+        body{
+            background-color: #04293A;
+        }
+        .dice-container{
+            background-color: #FAF4FF;
+            width: 150px;
+            display: block;
+            margin: 200px auto; 
+            border: 5px double black;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .dice{
+            height: 100px;
+            display: block;
+            margin: 10px auto;
+        }
+        .dice-text{
+            text-align: center;
+        }
+        .roll-btn{
+            background-color: #DA1212;
+            color: white;
+            border-radius: 10px;
+            padding: 3px 15px;
+            display: block;
+            margin: 10px auto;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .roll-btn:hover{
+            box-shadow: 1px 1px 3px 1px #04293A;
+        }
+    </style>
+</head>
+<body onload="roll()" <!-- refress krne pe he dice roll hoga--></body>>
+
+    <div class="dice-container">
+
+        <img src="./dice-img/dice-1.jpg" class="dice" id="dice"/>
+
+        <h3 class="dice-text" id="dice-text">1</h3>
+        
+        <button class="roll-btn" onclick="roll()">Roll Dice 🎲</button>
+    </div>
+
+
+    <script>
+    function roll(){    
+        const min = 1;
+        const max = 6;
+        const number = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        document.getElementById("dice-text").innerHTML = number;
+
+        const diceImg = document.getElementById("dice");
+        if(number==1)
+        {
+            diceImg.src="./dice-img/dice-1.jpg";
+        }
+        else if(number==2)
+        {
+            diceImg.src="./dice-img/dice-2.jpg";
+        }
+        else if(number==3)
+        {
+            diceImg.src="./dice-img/dice-3.jpg";
+        }
+        else if(number==4)
+        {
+            diceImg.src="./dice-img/dice-4.jpg";
+        }
+        else if(number==5)
+        {
+            diceImg.src="./dice-img/dice-5.jpg";
+        }
+        else
+        {
+            diceImg.src="./dice-img/dice-6.jpg";
+        }
+    }
+    </script>
+    
+</body>
+</html>
